@@ -17,14 +17,23 @@
               Dropdown
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item fw-semibold" href="{{route('register')}}">Registrati</a></li>
+              <li><a class="dropdown-item fw-semibold" href="{{route('login')}}">Login</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>              
+                <a class="dropdown-item hover-dropdown fw-semibold fsNav px-3" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">logout</a>
+                <form method="POST" action="{{route('logout')}}" id="form-logout" class="d-none">
+                  @csrf
+                </form>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
+            @auth
+            <a class="nav-link disabled" aria-disabled="true">{{Auth::user()->name}}</a>
+            @else
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            @endauth
           </li>
         </ul>
         <form class="d-flex" role="search">

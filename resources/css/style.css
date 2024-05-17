@@ -1,0 +1,29 @@
+:root{
+    --platinum: #E5E5E5;
+    --orange: rgb(255, 145, 0);
+    --oxfordBlue: #14213D;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+.sfondo{
+    background-image: linear-gradient( rgba(255, 255, 255, 0.85) , rgba(255, 255, 255, 0.45) ), url(/public/img/scroll-bg.jpg) ;
+    background-repeat: no-repeat ;
+    background-size: cover;
+}
+
+.bg-orange{
+    background-color: var(--orange);
+}
+
+.bg-oxford{
+    background-color: var(--oxfordBlue);
+}
+
+.bg-platinum{
+    background-color: var(--platinum);
+}
+
+.text-platinum{
+    color: var(--platinum);
+}
